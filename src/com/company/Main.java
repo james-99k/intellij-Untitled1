@@ -9,7 +9,27 @@ public class Main {
 
 
     public static void main(String[] args) {
-        /*byte byteVariable = 127;
+
+        //day1
+        /*variables();
+        switchCase();
+        forLoop();
+        whileLoop();
+        doWhileLoop();
+        diamond();*/
+
+        //day2
+        //Operations();
+        typeCasting();
+
+        //Exercise
+        /*calculation();
+        conversion();
+        sumOfIntegers();*/
+    }
+
+    public static void variables(){
+        byte byteVariable = 127;
         short mediumRangeDecimalVariable = 23767;
         int wholeNumber = 122;
         long largeDecimalNumbers = -12;
@@ -29,27 +49,11 @@ public class Main {
             System.out.println(isTrueOrFalse);
             System.out.println(+singleCharacter);
         }
-        switchCase();
-        forLoop();
-        whileLoop();
-        doWhileLoop();
-        diamond();*/
-        //Operations();
-        //sumOfIntegers();
-        typeCasting();
     }
 
     public static void Operations(){
         int num1 = 10;
         int num2 = 20;
-
-        /*Scanner input1 = new Scanner(System.in);
-        System.out.print("First Digit: ");
-        int num1 = input1.nextInt();
-        Scanner input2 = new Scanner(System.in);
-        System.out.print("Second Digit: ");
-        int num2 = input2.nextInt();
-        System.out.println();*/
 
         System.out.println("First Digit: " + num1 +" Second Digit: " + num2);
         System.out.println();
@@ -152,21 +156,6 @@ public class Main {
 
     }
 
-    public static void sumOfIntegers(){
-
-        System.out.println("Input digit to add numbers || 0 = end");
-        int sum = 0;
-        Scanner scn = new Scanner(System.in);
-        while (true) {
-            int temp = scn.nextInt();
-            if (temp == 0) {
-                break;
-            }
-            sum += temp;
-        }
-        System.out.println("Sum: " + sum);
-    }
-
     public static void switchCase(){
         int day = 1;
         switch (day) {
@@ -237,5 +226,69 @@ public class Main {
             System.out.println();
         }
     }
+    public static void calculation(){
+        Scanner input1 = new Scanner(System.in);
+        System.out.print("First Digit: ");
+        int num1 = input1.nextInt();
+        Scanner input2 = new Scanner(System.in);
+        System.out.print("Second Digit: ");
+        int num2 = input2.nextInt();
+        System.out.println();
+
+        System.out.println("First Digit: " + num1 +" Second Digit: " + num2);
+        System.out.println();
+
+        //Operations
+        System.out.print("Addition: ");
+        System.out.println( num1 + num2);
+        System.out.print("Subtraction: ");
+        System.out.println( num1 - num2);
+        System.out.print("Multiplication: ");
+        System.out.println( num1 * num2);
+        System.out.print("Division: ");
+        System.out.println( num1 / num2);
+        System.out.print("Modulo: ");
+        System.out.println( num1 % num2);
+        System.out.println();
+    }
+
+    public static void conversion(){
+        //deci to hexa
+        Scanner inputDeci = new Scanner( System.in );
+        System.out.print("Enter a decimal number : ");
+        int hexOutput =inputDeci.nextInt();
+
+        // calling method toHexString()
+        String str = Integer.toHexString(hexOutput);
+        System.out.println(+hexOutput +" to hexadecimal: "+str);
+        System.out.println();
+
+        //Hexa to deci
+        Scanner inputHex = new Scanner(System.in);
+        System.out.print("Enter a hexadecimal number: ");
+        String hexnum = inputHex.nextLine();
+        inputHex.close();
+
+        //converting hex to decimal by passing base 16
+        int deciOutput = Integer.parseInt(hexnum,16);
+
+        System.out.println(hexnum +" to decimal: "+deciOutput);
+    }
+
+    public static void sumOfIntegers(){
+
+        System.out.println("Input digit to add numbers || 0 = end");
+        int sum = 0;
+        Scanner scn = new Scanner(System.in);
+        while (true) {
+            int input = scn.nextInt();
+            if (input == 0) {
+                break;
+            }
+            sum += input;
+        }
+        System.out.println("Sum: " + sum);
+    }
+
 
 }
