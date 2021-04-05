@@ -1,8 +1,6 @@
 package com.company;
 
-import org.w3c.dom.Text;
-
-import javax.swing.text.EditorKit;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -53,7 +51,17 @@ public class Main {
 
         //day3
         //doWhileLoopExercise();
-        forLoopExercise();
+        //forLoopExercise();
+        //randomMaleName();
+        //randomFemaleName();
+        //randomRelationship();
+        //displaySentence();
+
+        //day4
+        //arrayCalculate();
+        //("James", "vincent", "gastador");
+        phraseString();
+
     }
 
     public static void variablesAndTypeCasting(){
@@ -509,6 +517,83 @@ public class Main {
                 System.out.print(", ");
             }
         }
+    }
+
+    public static void randomMaleName(){
+        String[] names = { "Liam", "Noah", "Oliver", "William", "Elijah", "Benjamin" };
+        Random Dice = new Random();
+        int n = Dice.nextInt(6);
+        System.out.print(names[n] +" ");
+    }
+
+    public static void randomFemaleName(){
+        String[] names = { "Olivia", "Emma", "Ava", "Sophia", "Isabelle", "Charlotte" };
+        Random Dice = new Random();
+        int n = Dice.nextInt(6);
+        System.out.print(names[n] +" ");
+    }
+
+    public static void randomRelationship(){
+        String[] names = { "Loves", "Hates", "Likes", "is mad with", "is angry with", "sympathizes with" };
+        Random Dice = new Random();
+        int n = Dice.nextInt(6);
+        System.out.print(names[n] +" ");
+    }
+
+    public static void displaySentence(){
+        randomMaleName();
+        randomRelationship();
+        randomFemaleName();
+    }
+
+    public static void arrayCalculate(){
+        int[] numbers = {10, 3, 5, -20, 0, 23};
+        int sum = 0;
+
+        for (int number: numbers){
+            sum += number;
+        }
+        System.out.print("Sum = " +sum);
+    }
+
+    public static void myMethod(String fname, String mname, String lname){
+        System.out.println(fname + mname + lname + "My method");
+    }
+
+    public static void phraseString(){
+        System.out.print("Enter a phrase: ");
+        Scanner input = new Scanner(System.in);
+        String str = input.nextLine();
+
+        System.out.println("Number of words: " +stringWordCount(str) + "\n");
+        System.out.println("Number of vowels: " +stringVowelCount(str) + "\n");
+
+    }
+
+    public static int stringWordCount(String str){
+        int count = 0;
+
+        if (!(" ".equals(str.substring(0, 1))) || !(" ".equals(str.substring(str.length() - 1))))
+        {
+            for (int i = 0; i < str.length(); i++) {
+                if (str.charAt(i) == ' ') {
+                    count++;
+                }
+            }
+            count = count + 1;
+        }
+        return count;
+    }
+
+    public static int stringVowelCount(String str){
+        int vowel = 0;
+
+        for (int i=0; i < str.length(); i++){
+            if (str.charAt(i) == 'a' || str.charAt(i) == 'e' || str.charAt(i) == 'i' || str.charAt(i) == 'o' || str.charAt(i) == 'u' ){
+                vowel++;
+            }
+        }
+        return vowel;
     }
 
 }
