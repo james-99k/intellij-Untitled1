@@ -60,7 +60,7 @@ public class Main {
         //day4
         //arrayCalculate();
         //("James", "vincent", "gastador");
-        phraseString();
+        //phraseString();
 
     }
 
@@ -584,9 +584,12 @@ public class Main {
 
     public static int stringVowelCount(String str){
         int vowel = 0;
+        String lower;
+
+        lower = str.toLowerCase();
 
         for (int i=0; i < str.length(); i++){
-            if (str.charAt(i) == 'a' || str.charAt(i) == 'e' || str.charAt(i) == 'i' || str.charAt(i) == 'o' || str.charAt(i) == 'u' ){
+            if (lower.charAt(i) == 'a' || lower.charAt(i) == 'e' || lower.charAt(i) == 'i' || lower.charAt(i) == 'o' || lower.charAt(i) == 'u' ){
                 vowel++;
             }
         }
